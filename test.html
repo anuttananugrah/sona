@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>our toxic web</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: linear-gradient(to bottom, #00b4aa, #ff4e00, #007bff, #ff006e);
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .pageWrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transform-origin: top center;
+      transition: transform 2s ease-in, opacity 2s ease-in;
+      z-index: 10;
+      overflow-y: auto;
+    }
+
+    .falling {
+      transform: rotate(70deg) translateY(100vh);
+      opacity: 0;
+    }
+
+    .screw {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 50px;
+      z-index: 100;
+      cursor: pointer;
+    }
+
+    .screw img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .note {
+      position: absolute;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 14px;
+      color: rgb(0, 132, 255);
+      font-weight: bold;
+      z-index: 100;
+    }
+
+    .pageContent {
+      margin-top: 140px;
+      padding: 40px 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .profile-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .profile-card:hover {
+      transform: scale(1.03);
+    }
+
+    .profile-card {
+      transition: all 0.5s ease-in-out;
+      display: flex;
+      align-items: center;
+      border-radius: 20px;
+      padding: 80px;
+      color: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .profile-card.reverse {
+      flex-direction: row-reverse;
+      text-align: right;
+    }
+
+    .profile-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .profile-details {
+      padding: 0 20px;
+    }
+
+    .profile-name {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .profile-title {
+      font-size: 16px;
+      margin: 5px 0;
+    }
+
+    .nivedbutton,
+    .sonabutton {
+      width: 90px;
+      height: 20px;
+      background-color: #ff4e00;
+      border: 1px solid #000;
+      border-radius: 40px;
+      cursor: pointer;
+      padding-bottom: 5px;
+      font-size: 14px;
+    }
+
+    .nivedbutton {
+      color: rgb(150, 86, 4);
+    }
+
+    .sonabutton {
+      background-color: #009688;
+      color: white;
+    }
+
+    .profile-location {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    .sona1 {
+      color: antiquewhite;
+    }
+
+    .bg-teal { background-color: #009688; }
+    .bg-orange { background-color: #f4511e; }
+    .bg-blue { background-color: #1976d2; }
+    .bg-pink { background-color: #d81b60; }
+  </style>
+</head>
+<body>
+
+  <div class="pageWrapper">
+    <div class="screw" onclick="makeItFall()">
+      <img src="picture/old-screw-nail-heads-steel-260nw-2566409261-removebg-preview.png" alt="Screw">
+    </div>
+    <div class="note">Don't touch here!</div>
+
+    <div class="pageContent">
+      <div class="profile-container">
+        <!-- Person 1 -->
+        <div class="profile-card bg-teal">
+          <img src="picture/sona.jpg" alt="Sona">
+          <div class="profile-details">
+            <div class="profile-name">SONA PRADEEP</div>
+            <div class="profile-title">TEACHER</div>
+            <div class="profile-location">kannur, kerala, india</div>
+            <div class="sona1">
+              <button class="sonabutton">
+                <a href="site/sona.html" target="_blank" style="color: rgb(0, 255, 0); text-decoration: none;">know more</a>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Person 2 -->
+        <div class="profile-card reverse bg-orange">
+          <img src="picture/sachu.jpg" alt="Sachu">
+          <div class="profile-details">
+            <div class="profile-name">NIVED K SURENDRAN</div>
+            <div class="profile-title">SOFTWARE ENGINEER</div>
+            <div class="profile-location">kannur, kerala, india</div>
+            <div>
+              <button class="nivedbutton">
+                <a href="site/sachu.html" target="_blank" style="color: black; text-decoration: none;">know more</a>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        
+        <!-- Person 3 -->
+        <div class="profile-card bg-blue">
+          <img src="picture/anju.jpg" alt="hishya">
+          <div class="profile-details">
+            <div class="profile-name">HISHYA</div>
+            <div class="profile-title">TEACHER</div>
+            <div class="profile-location">kannur, kerala, india</div>
+            <div>
+              <button class="nivedbutton" style="color: #4400ff;">know more</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Person 4 -->
+        <div class="profile-card reverse bg-pink">
+          <img src="picture/anu.jpg" alt="anuttan">
+          <div class="profile-details">
+            <div class="profile-name">ANUGRAH</div>
+            <div class="profile-title">WEB DEVELOPER</div>
+            <div class="profile-location">kannur, kerala, india</div>
+            <div>
+              <button class="nivedbutton" style="color: #b0d219;">know more</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function makeItFall() {
+      document.querySelector(".pageWrapper").classList.add("falling");
+    }
+  </script>
+
+</body>
+</html>
